@@ -22,6 +22,26 @@ class ArrayQueueTest {
     void ThrowException() {
         assertThrows(IllegalArgumentException.class, () -> {
             ArrayQueue queue = new ArrayQueue(5);
-        })
+        });
+    }
+
+    @Test
+    void testIsEmpty() {
+    }
+
+    @Test
+    void getFrontElement() {
+    }
+
+    @Test
+    void getRearElement() {
+    }
+
+    @Test
+    void put() {
+    }
+
+    @Test
+    void remove() {
     }
 }

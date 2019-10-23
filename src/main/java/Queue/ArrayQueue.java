@@ -20,4 +20,20 @@ public class ArrayQueue implements Queue {
     public boolean isEmpty() {
         return front == rear;
     }
+
+    public Object getFrontElement() {
+        return null;
+    }
+
+    public Object getRearElement() {
+        return null;
+    }
+
+    public void put(Object payload) {
+
+    }
+
+    public Object remove() {
+        return null;
+    }
 }
