@@ -1,5 +1,7 @@
 package Queue;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayQueueTest {
@@ -13,6 +15,13 @@ class ArrayQueueTest {
 
     @org.junit.jupiter.api.Test
     void isEmpty() {
+        assertTrue(queue.isEmpty());
+    }
 
+    @Test
+    void ThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            ArrayQueue queue = new ArrayQueue(5);
+        })
     }
 }

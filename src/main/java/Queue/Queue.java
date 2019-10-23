@@ -14,26 +14,26 @@ public interface Queue<T> {
      *
      * @return null, wenn die Queue leer ist
      */
-    //T getFrontElement();
+    T getFrontElement();
 
     /**
      * Liefert das hinterste Element der Datenstruktur.
      *
      * @return null, wenn die Queue leer ist
      */
-    //T getRearElement();
+    T getRearElement();
 
     /**
      * Fügt ein neues Element hinten an.
      *
      * @param payload einzufügendes Objekt
      */
-    //void put(T payload);
+    void put(T payload);
 
     /**
      * Entfernt das vorderste Elemement aus der Queue.
      *
      * @return null, wenn die Queue leer ist
      */
-    //T remove();
+    T remove();
 }
