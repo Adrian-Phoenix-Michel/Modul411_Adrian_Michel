@@ -23,6 +23,10 @@ public class ArrayQueue implements Queue {
         return front == rear && (queue[front] == null);
     }
 
+    public boolean isFull() {
+        return queue[rear] != null && (queue[front] != null);
+    }
+
     public Object getFrontElement() {
         return queue[front];
     }

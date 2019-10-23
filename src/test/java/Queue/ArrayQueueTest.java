@@ -53,7 +53,7 @@ class ArrayQueueTest {
     }
 
     @Test
-    void full() {
+    void isFull() {
         queue.put(1);
         queue.put(2);
         queue.put(3);
@@ -64,7 +64,8 @@ class ArrayQueueTest {
         queue.put(8);
         queue.put(9);
         queue.put(10);
-        queue.put(11);
-        assertEquals(10, queue.getRearElement());
+        assertTrue(queue.isFull());
+        queue.remove();
+        assertFalse(queue.isFull());
     }
 }

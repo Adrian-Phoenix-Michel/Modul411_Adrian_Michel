@@ -2,6 +2,8 @@ package Queue;
 
 public interface Queue<T> {
 
+    boolean isFull();
+
     /**
      * Liefert den Wert true, wenn die Datenstruktur leer ist.
      *
