@@ -10,7 +10,7 @@ class ArrayQueueTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        queue = new ArrayQueue(2);
+        queue = new ArrayQueue(10);
     }
 
     @org.junit.jupiter.api.Test
@@ -19,29 +19,52 @@ class ArrayQueueTest {
     }
 
     @Test
-    void ThrowException() {
+    void ThrowException(){
         assertThrows(IllegalArgumentException.class, () -> {
-            ArrayQueue queue = new ArrayQueue(5);
+            ArrayQueue queueWe = new ArrayQueue(0);
         });
     }
 
     @Test
-    void testIsEmpty() {
-    }
-
-    @Test
     void getFrontElement() {
+        queue.put("Haus");
+        queue.put(4);
+        queue.put("Cat");
     }
 
     @Test
     void getRearElement() {
+        queue.put("Haus");
+        queue.put(4);
+        queue.put("Cat");
     }
 
     @Test
     void put() {
+        queue.put(1);
+        assertEquals(1, queue.getRearElement());
     }
 
     @Test
     void remove() {
+        queue.put(1);
+        queue.remove();
+        queue.isEmpty();
+    }
+
+    @Test
+    void full() {
+        queue.put(1);
+        queue.put(2);
+        queue.put(3);
+        queue.put(4);
+        queue.put(5);
+        queue.put(6);
+        queue.put(7);
+        queue.put(8);
+        queue.put(9);
+        queue.put(10);
+        queue.put(11);
+        assertEquals(10, queue.getRearElement());
     }
 }

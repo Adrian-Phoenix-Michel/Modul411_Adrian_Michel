@@ -1,5 +1,7 @@
 package Queue;
 
+import java.awt.geom.Area;
+
 public class ArrayQueue implements Queue {
     private Object[] queue;
     private int front, rear;
@@ -18,22 +20,37 @@ public class ArrayQueue implements Queue {
 
     @Override
     public boolean isEmpty() {
-        return front == rear;
+        return front == rear && (queue[front] == null);
     }
 
     public Object getFrontElement() {
-        return null;
+        return queue[front];
     }
 
     public Object getRearElement() {
-        return null;
+        return queue[rear - 1];
     }
 
     public void put(Object payload) {
-
+        if (queue[rear] == null) {
+            queue[rear] = payload;
+            rear += 1;
+            rear = rear % queue.length;
+        }
+        else {
+            throw new IllegalArgumentException("Queue full!");
+        }
     }
 
     public Object remove() {
-        return null;
+        if (isEmpty()) {
+            return null;
+        }
+        else {
+            Object reObject = queue[front];
+            queue[front] = null;
+
+            return reObject;
+        }
     }
 }
